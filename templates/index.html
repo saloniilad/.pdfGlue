@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.pdfGlue - Merge Multiple PDFs Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">.pdfGlue</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#tool">Merge Tool</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Merge PDFs Effortlessly</h1>
+            <p>Combine multiple PDF files into one document quickly and securely. No registration required, completely free to use.</p>
+            <a href="#tool" class="cta-button">Start Merging PDFs</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our PDF Merger?</h2>
+            <p class="section-subtitle">Experience the fastest and most reliable way to merge your PDF documents with our advanced online tool.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Merge multiple PDFs in seconds with our optimized processing engine. No waiting, no delays.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Secure</h3>
+                    <p>Your files are processed securely and deleted immediately after merging. Complete privacy guaranteed.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Works Everywhere</h3>
+                    <p>Access from any device - desktop, tablet, or mobile. No software installation required.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Instant Download</h3>
+                    <p>Get your merged PDF immediately. Files are automatically downloaded to your device.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Quality Preserved</h3>
+                    <p>Original quality maintained throughout the merge process. No compression or quality loss.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Unlimited Use</h3>
+                    <p>Merge as many PDFs as you need, as often as you want. No limits, no restrictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Merger Tool -->
+    <section id="tool" class="tool-section">
+        <div class="tool-container">
+            <h2 class="section-title">PDF Merger Tool</h2>
+            <p class="section-subtitle">Upload your PDF files and merge them into a single document</p>
+            
+            <div class="pdf-merger-tool">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <div class="upload-text">Drag & Drop PDF Files Here</div>
+                    <div class="upload-subtext">or click to browse files</div>
+                    <button class="btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-plus"></i> Select Files
+                    </button>
+                    <input type="file" id="fileInput" accept=".pdf" multiple>
+                </div>
+                
+                <div class="file-list" id="fileList"></div>
+                
+                <div class="merge-section">
+                    <button class="btn" id="mergeBtn" onclick="mergePDFs()" disabled>
+                        <i class="fas fa-compress-alt"></i> Merge PDFs
+                    </button>
+                    
+                    <div class="progress" id="progress" style="display: none;">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    
+                    <div class="status" id="status" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Merge your PDFs in three simple steps</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Files</h3>
+                    <p>Select or drag & drop multiple PDF files that you want to merge together.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Arrange Order</h3>
+                    <p>Review your files and remove any unwanted documents from the list.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Download Result</h3>
+                    <p>Click merge and your combined PDF will be automatically downloaded.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PDF Merger</h3>
+                    <p>The most reliable and secure way to merge PDF files online. Fast, free, and easy to use.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <p><a href="#features">Lightning Fast Processing</a></p>
+                    <p><a href="#features">100% Secure & Private</a></p>
+                    <p><a href="#features">No Registration Required</a></p>
+                    <p><a href="#features">Mobile Friendly</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><a href="#how-it-works">How to Use</a></p>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 .pdfGlue. All rights reserved.</p>
+                <p>Made with &hearts; by Saloni.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
