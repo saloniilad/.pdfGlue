@@ -30,8 +30,8 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/pdfglue.git
-cd pdfglue
+git clone https://github.com/saloniilad/.pdfGlue.git
+cd .pdfGlue
 pip install -r requirements.txt
 python app.py
 ```
